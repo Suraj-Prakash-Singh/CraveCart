@@ -20,8 +20,8 @@ li{
 }
 
 .foodCard{
-    width: 220px;
-    height: 300px;
+    width: 280px;
+    height: 450px;
     margin: 5px;
     background-color: azure;
 }
@@ -36,9 +36,10 @@ li{
 }
 
 .foodCard > img{
-    width: 220px;
+    width: 100%;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    height: 50%;
 }
 
 .cardsContainer{
