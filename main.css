@@ -1,0 +1,47 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoHeader{
+    margin-left: 150px;
+}
+.navbarList {
+    margin-right: 150px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+li{
+    margin: 20px;
+    font-size: 16;
+}
+
+.foodCard{
+    width: 220px;
+    height: 300px;
+    margin: 5px;
+    background-color: azure;
+}
+
+.foodCard:hover{
+    border: 1px solid grey
+}
+
+.bodyContainer{
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.foodCard > img{
+    width: 220px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
