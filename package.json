@@ -1,0 +1,29 @@
+{
+  "name": "cravecart",
+  "version": "1.0.0",
+  "description": "Food ordering app",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suraj-Prakash-Singh/CraveCart.git"
+  },
+  "keywords": [
+    "food",
+    "delivery",
+    "app"
+  ],
+  "author": "Suraj Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suraj-Prakash-Singh/CraveCart/issues"
+  },
+  "homepage": "https://github.com/Suraj-Prakash-Singh/CraveCart#readme",
+  "dependencies": {
+    "parcel": "^2.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
