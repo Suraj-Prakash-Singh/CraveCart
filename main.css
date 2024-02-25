@@ -27,7 +27,8 @@ li{
 }
 
 .foodCard:hover{
-    border: 1px solid grey
+    border: 1px solid grey;
+    cursor: pointer;
 }
 
 .bodyContainer{

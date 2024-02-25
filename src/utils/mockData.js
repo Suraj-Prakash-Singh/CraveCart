@@ -1,23 +1,4 @@
-import React from "react";
-import ReactDom from "react-dom/client";
-import Logo from "./resources/Logo.svg";
-import foodImg from "./resources/burger.png"
-
-const Header = () => {
-    return (
-    <div className="headerContainer">
-        <img src={Logo} className="logoHeader" alt="CraveCartLogo"></img>
-        <ul className="navbarList">
-            <li>Search</li>
-            <li>Offers</li>
-            <li>Account</li>
-            <li>Cart</li>
-        </ul>
-    </div>
-    );
-}
-
-const resList =[
+export const resList =[
     {
         "info": {
             "id": "483332",
@@ -770,47 +751,3 @@ const resList =[
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     }
 ]
-const Body = () => {
-    return (
-        <div className="bodyContainer">
-            <div className="heading">
-                <h2>Featured items in your area</h2>
-            </div>
-            <div className="cardsContainer">
-                {resList.map((restrauntInfo, index) => <FoodCard key={index} restraunt={restrauntInfo}></FoodCard>)}
-            </div>
-        </div>
-    );
-}
-
-const Footer = () => {
-    return (<div className="footerContainer"></div>);
-}
-
-let count = 1;
-const imgCDNLink = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-const FoodCard = (restraunt) => {
-    console.log(count);
-    count = count + 1;
-    const {name, cloudinaryImageId, costForTwo, avgRating, locality} = restraunt.restraunt.info;
-    return (
-        <div className="foodCard">
-            <img alt="burgerImg" src={imgCDNLink + cloudinaryImageId}></img>
-            <div className="foodCardMetaData">
-                <h3>{name}</h3>
-                <h4>{locality}</h4>
-                <h4>{avgRating}</h4>
-                <h4>{costForTwo} minutes</h4>
-            </div>
-        </div>
-    )
-}
-const AppLayout = () => (
-    <>
-        <Header></Header>
-        <Body></Body>
-        <Footer></Footer>
-    </>
-)
-const root = ReactDom.createRoot(document.getElementById("root"))
-root.render(<AppLayout/>);
