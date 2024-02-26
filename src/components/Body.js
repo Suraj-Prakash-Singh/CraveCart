@@ -6,6 +6,7 @@ import { SWIGGYAPI } from "../utils/constants";
 const Body = () => {
 
     const [list, setList] = useState([]);
+    const [filteredList, setFilteredList] = useState([]);
     const [search, setSearch] = useState("");
 
     useEffect(()=> {
@@ -14,6 +15,7 @@ const Body = () => {
             const json = await response.json();
             const newList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setList(newList);
+            setFilteredList(newList);
         }
         fetchData();
     }, []);
@@ -23,7 +25,7 @@ const Body = () => {
         console.log(search)
         const updatedResList = list.filter((res) => res?.info?.name.toLowerCase().includes(search.toLowerCase()));
         console.log(updatedResList);
-        setList(updatedResList);
+        setFilteredList(updatedResList);
     }
     return list.length===0 ? <Shimmer/> : (
         <div className="bodyContainer">
@@ -44,7 +46,7 @@ const Body = () => {
                 </button>
             </div>
             <div className="cardsContainer">
-                {list.map((restrauntInfo, index) => <FoodCard key={index} restraunt={restrauntInfo}></FoodCard>)}
+                {filteredList.map((restrauntInfo, index) => <FoodCard key={index} restraunt={restrauntInfo}></FoodCard>)}
             </div>
         </div>
     );
