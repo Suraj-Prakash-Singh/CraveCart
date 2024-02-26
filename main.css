@@ -32,7 +32,8 @@ li > img{
     width: 280px;
     height: 450px;
     margin: 5px;
-    background-color: azure;
+    background-color: #f0f0f0;
+    border-radius: 16px;
 }
 
 .foodCard:hover{
@@ -47,8 +48,8 @@ li > img{
 
 .foodCard > img{
     width: 100%;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
     height: 50%;
 }
 
@@ -59,4 +60,20 @@ li > img{
 
 .filter{
     margin: 10px;
+}
+
+.shimmerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-top: 100px;
+}
+
+.fakeCard{
+    border-radius: 16px;
+    width: 280px;
+    height: 400px;
+    margin: 5px;
+    background-color: #f0f0f0
 }
