@@ -1,5 +1,6 @@
 import FoodCard from "./FoodCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SWIGGYAPI } from "../utils/constants";
 
@@ -46,7 +47,10 @@ const Body = () => {
                 </button>
             </div>
             <div className="cardsContainer">
-                {filteredList.map((restrauntInfo, index) => <FoodCard key={index} restraunt={restrauntInfo}></FoodCard>)}
+                {filteredList.map((restrauntInfo, index) => {
+                return <Link key={restrauntInfo.info.id} to={"/restraunts/" + restrauntInfo.info.id}>
+                    <FoodCard restraunt={restrauntInfo}></FoodCard>
+                    </Link>})}
             </div>
         </div>
     );

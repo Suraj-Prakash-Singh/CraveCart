@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
 import searchLogo from "../assets/search-line.png"
 import offerLogo from "../assets/percent-line.svg"
@@ -15,11 +16,11 @@ const Header = () => {
                 </li>
                 <li>
                     <img src={offerLogo} alt="searchAlt"></img>
-                    Offers
+                    <Link to="/about">Offers</Link>
                 </li>
                 <li>
                     <img src={accountLogo} alt="searchAlt"></img>
-                    Account
+                    <Link to="/contact">Account</Link>
                 </li>
                 <li>
                     <img src={cartLogo} alt="searchAlt"></img>

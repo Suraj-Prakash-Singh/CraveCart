@@ -14,7 +14,7 @@
     padding: 15px;
 }
 
-li{
+.navbarList > li{
     margin: 20px;
     font-size: 16;
     display: flex;
@@ -24,7 +24,7 @@ li{
     font-style: normal;
 }
 
-li > img{
+.navbarList > li > img{
     margin-right: 8px;
 }
 
