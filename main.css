@@ -1,3 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* metropolis-latin-900-normal */
+@font-face {
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 800;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-800-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-900-normal.woff) format('woff');
+  }
+  
+  /* metropolis-latin-500-normal */
+/* metropolis-latin-400-normal */
+@font-face {
+    font-family: 'MetropolisNormal';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-400-normal.woff) format('woff');
+  }
+
+  /* metropolis-latin-600-normal */
+@font-face {
+    font-family: 'MetropolisSemiBold';
+    font-style: italic;
+    font-display: swap;
+    font-weight: 600;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-600-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/metropolis@latest/latin-600-normal.woff) format('woff');
+  }
+
 .headerContainer{
     display: flex;
     justify-content: space-between;
@@ -76,4 +110,59 @@
     height: 400px;
     margin: 5px;
     background-color: #f0f0f0
+}
+
+.outerDiv{
+    background-color: black;
+}
+
+.errorMsgContainer{
+    position: absolute;
+    top: 50px;
+    right: 190px;
+    height: 650px;
+    width: 460px;
+}
+.errorMsgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.upperOne > h1{
+    margin-top: 80px;
+    font-family: 'Metropolis';
+    font-weight: bolder;
+    font-style: normal;
+    color: #FC8019;
+    font-size: 45px;
+}
+
+.upperOne > p {
+    font-family: 'MetropolisNormal';
+    width: 300px;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.upperOne > h4 {
+    font-family: 'MetropolisSemiBold';
+    font-size: 20px;
+    width: 250px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.goBackBtn{
+    background-color: #FC8019;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 180px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-bottom: 100px;
+    font-family: 'MetropolisSemiBold';
 }
