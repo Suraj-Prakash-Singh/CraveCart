@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Restraunt from "./components/Restraunt";
 import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 const AppLayout = () => (
     <>
@@ -45,6 +46,10 @@ const appRouter = createBrowserRouter([
     {
         path: "/signup",
         element: <SignUp/>
+    },
+    {
+        path: "/login",
+        element: <SignIn/>
     },
 ])
 const root = ReactDom.createRoot(document.getElementById("root"))

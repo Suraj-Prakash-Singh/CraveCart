@@ -167,15 +167,15 @@ body, html {
     font-family: 'MetropolisSemiBold';
 }
 
-.signUpRoot{
+.signUpRoot, .signInRoot{
     display: flex;
 }
 
-.leftImgContainer{
+.leftImgContainer, .loginImgContainer{
     background-color: black;
 }
 
-.signUpInfoContainer{
+.signUpInfoContainer, .signInInfoContainer{
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -227,4 +227,22 @@ span:hover{
 a{
     text-decoration: none;
     cursor: pointer;
+}
+
+.signInBottomLinkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.sp{
+    color: #FC8019;
+    font-family: "MetropolisSemiBold";
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+.sp:hover{
+    color: lightsalmon;
 }
