@@ -16,11 +16,10 @@ const Restraunt = () => {
         const resId = params.resId;
         const data = await fetch(SWIGGYMENUAPI+resId);
         const json = await data.json();
-        const resName = json.data.cards[2].card.card.info.name;
-        const menuItemsList = json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
-        console.log(menuItemsList)
+        const resName = json.data.cards[0].card.card.info.name;
+        const menuItemsList = json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
         setName(resName);
-        setMenuItems(menuItemsList)
+        setMenuItems(menuItemsList);
     }
 
     if (name==="") return <RestrauntShimmer/>
