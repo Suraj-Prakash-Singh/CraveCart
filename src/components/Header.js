@@ -20,7 +20,7 @@ const Header = () => {
                 </li>
                 <li>
                     <img src={accountLogo} alt="searchAlt"></img>
-                    <Link to="/contact">Account</Link>
+                    <Link to="/signUp">Account</Link>
                 </li>
                 <li>
                     <img src={cartLogo} alt="searchAlt"></img>

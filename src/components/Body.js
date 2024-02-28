@@ -11,15 +11,16 @@ const Body = () => {
     const [search, setSearch] = useState("");
 
     useEffect(()=> {
-        async function fetchData(){
-            const response = await fetch(SWIGGYAPI);
-            const json = await response.json();
-            const newList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            setList(newList);
-            setFilteredList(newList);
-        }
         fetchData();
     }, []);
+
+    async function fetchData(){
+        const response = await fetch(SWIGGYAPI);
+        const json = await response.json();
+        const newList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        setList(newList);
+        setFilteredList(newList);
+    }
     //without dependency array in useEffect, the application goes into infinte loop why?.
 
     function searchOnClickHandler(){

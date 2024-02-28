@@ -166,3 +166,65 @@ body, html {
     margin-bottom: 100px;
     font-family: 'MetropolisSemiBold';
 }
+
+.signUpRoot{
+    display: flex;
+}
+
+.leftImgContainer{
+    background-color: black;
+}
+
+.signUpInfoContainer{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: "MetropolisNormal";
+}
+.inputBoxContainer{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+}
+
+.inputBoxContainer > input{
+    border-radius: 6px;
+    height: 30px;
+    border: 2px grey solid;
+    margin-bottom: 20px;
+    padding: 0px 7px;
+    font-family: 'MetropolisNormal';
+    color: #9E9E9E;
+}
+.inputBoxContainer > button{
+    background-color: #FC8019;
+    border: none;
+    border-radius: 6px;
+    height: 30px;
+    color: #f0f0f0;
+    font-family: 'MetropolisNormal';
+    cursor: pointer;
+}
+
+.inputBoxContainer > button:hover{
+    background-color: lightsalmon
+}
+
+span{
+    color: #FC8019;
+    font-family: "MetropolisSemiBold";
+}
+
+span:hover{
+    color: lightsalmon
+}
+.signInRedirect > p{
+    color: #9E9E9E;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Restraunt from "./components/Restraunt";
+import SignUp from "./components/SignUp";
 
 const AppLayout = () => (
     <>
@@ -40,7 +41,11 @@ const appRouter = createBrowserRouter([
                 element: <Restraunt/>
             },
         ]
-    }
+    },
+    {
+        path: "/signup",
+        element: <SignUp/>
+    },
 ])
 const root = ReactDom.createRoot(document.getElementById("root"))
 root.render(<RouterProvider router={appRouter}/>);
