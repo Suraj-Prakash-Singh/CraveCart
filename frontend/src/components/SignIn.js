@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import logIn from "../assets/login.png"
 import leftArrow from "../assets/leftArrow.svg";
+import { useEffect } from "react";
 
 const SignIn = () => {
+    // useEffect(()=> {
+    //     callSignUp();
+    // },[])
+    async function callSignUp(){
+        console.log("in signup")
+        const requestOptions = {
+            method: 'POST'
+        };
+        const res = await fetch('http://localhost:3000/signup', requestOptions)
+        const json = await res.json();
+        console.log(json);
+    }
+
     return (
         <div className="signInRoot">
             <div className="loginImgContainer">
