@@ -24,8 +24,25 @@ function validateUserSignUpSchema(req, res, next){
     }
 }
 
-function validateUserLoginDetails(req, res, rext){
-
+function validateUserLoginSchema(req, res, next){
+    const { email, password } = req.headers;
+    try{
+        console.log("in try block");
+        if(email.length > 0 && password.length>0){
+            next();
+        }
+        else{
+            res.status(404).send({
+                msg: "Invalid input"
+            })
+        }
+    }
+    catch(err){
+        res.status(403).send({
+            msg: "Some error happened"
+        })
+        console.log(err);
+    }
 }
 
-module.exports = {validateUserSignUpSchema};
+module.exports = {validateUserSignUpSchema, validateUserLoginSchema};

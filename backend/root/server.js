@@ -1,4 +1,4 @@
-const {validateUserSignUpSchema} =  require("./middleware");
+const { validateUserSignUpSchema, validateUserLoginSchema } =  require("./middleware");
 const { User }  = require("./model");
 const express  = require("express");
 const cors = require('cors');
@@ -25,7 +25,33 @@ app.post("/signup", validateUserSignUpSchema, async (req, res)=> {
     }
 })
 
-app.post("/login", (req, res)=> {
+app.post("/login", validateUserLoginSchema, async (req, res)=> {
+    const { email, password } = req.headers;
+    try{
+        const storedPassword = await User.findOne({email});
+        console.log(storedPassword);
+        if(storedPassword===null){
+            res.status(404).json({
+                msg: "No such user exists, SignUp first"
+            })
+        }
+        else if(storedPassword.password===password){
+            res.json({
+                msg: "Login Successful!"
+            })
+        }
+        else{
+            res.status(404).json({
+                msg: "Wrong password!"
+            })
+        }
+    }
+    catch(err){
+        res.status(500).json({
+            msg: "Some error occurred"
+        })
+        console.log(err);
+    }
 })
 
 app.listen(3000, ()=> {

@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 import logIn from "../assets/login.png"
 import leftArrow from "../assets/leftArrow.svg";
-import { useEffect } from "react";
+import { useState } from "react";
 
 const SignIn = () => {
-    // useEffect(()=> {
-    //     callSignUp();
-    // },[])
-    async function callSignUp(){
-        console.log("in signup")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    async function callLogin(){
+        console.log("in login")
         const requestOptions = {
-            method: 'POST'
+            method: 'POST',
+            headers: {
+                'email' : email,
+                'password' : password
+            }
         };
-        const res = await fetch('http://localhost:3000/signup', requestOptions)
+        const res = await fetch('http://localhost:3000/login', requestOptions)
         const json = await res.json();
         console.log(json);
     }
@@ -28,9 +32,13 @@ const SignIn = () => {
                     <p>Haven't signedup yet?<Link to="/signup"><span> Signup Here</span></Link></p>
                 </div>
                 <div className="inputBoxContainer">
-                    <input type="text" placeholder="Please enter your email"></input>
-                    <input type="password" placeholder="Please enter your password"></input>
-                    <button>Login</button>
+                    <input type="text" placeholder="Please enter your email" 
+                        onChange={(e) => setEmail(e.target.value)}>
+                    </input>
+                    <input type="password" placeholder="Please enter your password"
+                        onChange={(e) => setPassword(e.target.value)}>
+                    </input>
+                    <button onClick={()=> callLogin()}>Login</button>
                 </div>
                 <div className="signInBottomLinkContainer">
                 <img src={leftArrow}></img><span><Link className="sp" to="/">Go Back To Homepage</Link></span>

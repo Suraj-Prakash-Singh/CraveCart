@@ -1,5 +1,5 @@
 const mongoose  = require("mongoose");
-const { MONGODBURL }  = require("./constants");
+const { MONGODBURL }  = require("./configuration");
 
 mongoose.connect(MONGODBURL);
 
