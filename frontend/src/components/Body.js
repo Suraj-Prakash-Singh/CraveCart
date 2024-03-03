@@ -1,5 +1,6 @@
 import FoodCard from "./FoodCard";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SWIGGYAPI } from "../utils/constants";
@@ -9,7 +10,7 @@ const Body = () => {
     const [list, setList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
     const [search, setSearch] = useState("");
-
+    const onlineStatus = useOnlineStatus();
     useEffect(()=> {
         fetchData();
     }, []);
@@ -29,6 +30,9 @@ const Body = () => {
         console.log(updatedResList);
         setFilteredList(updatedResList);
     }
+
+    if(onlineStatus===false) return <h1>Looks like you are offline</h1>
+    
     return list.length===0 ? <Shimmer/> : (
         <div className="bodyContainer">
             <div className="heading">
