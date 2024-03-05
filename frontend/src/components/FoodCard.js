@@ -19,4 +19,15 @@ const FoodCard = (restraunt) => {
     )
 }
 
+export const FoodCardPromoted = (FoodCard) => {
+    return (props) =>{
+        return (
+            <div>
+                <div className="promoted">Promoted</div>
+                <FoodCard {...props}></FoodCard>
+            </div>
+        )
+    }
+}
+
 export default FoodCard;

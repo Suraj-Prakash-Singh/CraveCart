@@ -1,4 +1,4 @@
-import FoodCard from "./FoodCard";
+import FoodCard, { FoodCardPromoted } from "./FoodCard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
@@ -14,6 +14,8 @@ const Body = () => {
     useEffect(()=> {
         fetchData();
     }, []);
+
+    const PromotedRes = FoodCardPromoted(FoodCard);
 
     async function fetchData(){
         const response = await fetch(SWIGGYAPI);
@@ -53,9 +55,13 @@ const Body = () => {
             </div>
             <div className="cardsContainer">
                 {filteredList.map((restrauntInfo, index) => {
-                return <Link key={restrauntInfo.info.id} to={"/restraunts/" + restrauntInfo.info.id}>
-                    <FoodCard restraunt={restrauntInfo}></FoodCard>
-                    </Link>})}
+                    console.log(restrauntInfo.info);
+                    return <Link key={restrauntInfo.info.id} to={"/restraunts/" + restrauntInfo.info.id}>
+                            {/* <FoodCard restraunt={restrauntInfo}/> */}
+                            {parseInt(restrauntInfo.info.id) > 39000 ? <FoodCard restraunt={restrauntInfo}/> : <PromotedRes restraunt={restrauntInfo}/>} 
+                            </Link>
+                        })
+                }
             </div>
         </div>
     );
