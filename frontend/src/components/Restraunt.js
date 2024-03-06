@@ -8,6 +8,7 @@ const Restraunt = () => {
 
     const [name, setName] = useState("");
     const [menuItems, setMenuItems] = useState([]);
+    const [showIndex, setShowIndex] = useState(null);
     const params = useParams();
 
     useEffect(()=> {
@@ -31,7 +32,10 @@ const Restraunt = () => {
     return (
         <div className="restrauntContainer">
             <h1>{name}</h1>
-            {menuItems.map((item, index) => <ResAccordion key={index} menuItems={item.card.card}></ResAccordion>)}
+            {menuItems.map((item, index) => {
+                return <ResAccordion key={index} menuItems={item.card.card} expand={index===showIndex ? true : false}
+                        setShowIndex={()=> setShowIndex(index)}>
+                        </ResAccordion>})}
         </div>
     )
 }

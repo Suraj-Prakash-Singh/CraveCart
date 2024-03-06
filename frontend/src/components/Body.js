@@ -27,9 +27,7 @@ const Body = () => {
     //without dependency array in useEffect, the application goes into infinte loop why?.
 
     function searchOnClickHandler(){
-        console.log(search)
         const updatedResList = list.filter((res) => res?.info?.name.toLowerCase().includes(search.toLowerCase()));
-        console.log(updatedResList);
         setFilteredList(updatedResList);
     }
 
@@ -55,7 +53,6 @@ const Body = () => {
             </div>
             <div className="cardsContainer">
                 {filteredList.map((restrauntInfo, index) => {
-                    console.log(restrauntInfo.info);
                     return <Link key={restrauntInfo.info.id} to={"/restraunts/" + restrauntInfo.info.id}>
                             {/* <FoodCard restraunt={restrauntInfo}/> */}
                             {parseInt(restrauntInfo.info.id) > 39000 ? <FoodCard restraunt={restrauntInfo}/> : <PromotedRes restraunt={restrauntInfo}/>} 
