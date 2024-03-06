@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestrauntShimmer from "./RestrauntShimmer";
+import AccordionShimmer from "./AccordionShimmer";
 import ResAccordion from "./ResAccordion";
 import { SWIGGYMENUAPI } from "../utils/constants";
 import { useParams } from "react-router";
@@ -27,7 +27,7 @@ const Restraunt = () => {
         setMenuItems(menuItemsList);
     }
 
-    if (name==="") return <RestrauntShimmer/>
+    if (name==="") return <AccordionShimmer/>
     return (
         <div className="restrauntContainer">
             <h1>{name}</h1>
