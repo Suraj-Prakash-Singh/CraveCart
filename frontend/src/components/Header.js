@@ -4,8 +4,11 @@ import searchLogo from "../assets/search-line.png"
 import offerLogo from "../assets/percent-line.svg"
 import accountLogo from "../assets/account-circle-line.svg"
 import cartLogo from "../assets/shopping-cart-line.svg"
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 const Header = () => {
+    const user = useContext(userContext);
     return (
         <div className="headerContainer">
             <img src={Logo} className="logoHeader" alt="CraveCartLogo"></img>
@@ -25,6 +28,9 @@ const Header = () => {
                 <li>
                     <img src={cartLogo} alt="searchAlt"></img>
                     Cart
+                </li>
+                <li>
+                    {user.userName}
                 </li>
             </ul>
         </div>
